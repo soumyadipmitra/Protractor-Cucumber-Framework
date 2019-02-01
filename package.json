@@ -9,7 +9,7 @@
     "tsc": "tsc",
     "build-test": "npm run tsc && npm run test",
     "protractor": "./node_modules/protractor/built/cli.js",
-    "webdriver-update": "./node_modules/.bin/webdriver-manager update --proxy http://proxy.ops.tiaa-cref.org:8080/ --ignore_ssl"
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update --ignore_ssl"
   },
   "author": "soumyadip",
   "license": "ISC",
