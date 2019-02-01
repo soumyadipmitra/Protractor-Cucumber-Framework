@@ -1,0 +1,28 @@
+- in Selenium projects, you download the jar files (dependencies)
+
+- in Maven, you have POM.XML - where you define all the dependencies (like all the jar files) you need for your projects
+
+- In Protractor projects, there is a concept called package.json
+
+    you give all the dependencies in package.json files
+
+    when you run npm install, then it looks at project.json and go and download all the dependencies
+
+For assertions you need one more framework called chai
+
+For framework we need to mention all the dependencies in package.json file which will then go and install all of them from internet
+
+Command to create a package.json is "npm init"
+    You will be asked some questions and you can skip them by hitting enter or you can enter it
+    Your package.json will be created
+    Now you have to type in the dependencies there
+
+To know what are dependencies that you can include in project.json file, go to their official site
+    protractortest.org --> Reference --> Using Typescript
+    That will open a sample project in git which will give us all the info
+    https://github.com/angular/protractor/tree/5.4.1/exampleTypescript
+    
+tsconfig.json is also a mandatory file for compiling our code
+    To create a tsconfig.json file, type "tsc --init" (do it from Node CMD if you get error)
+
+to run a spec.ts file you can use config.ts file

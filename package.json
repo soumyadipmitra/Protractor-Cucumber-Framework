@@ -1,0 +1,33 @@
+{
+  "name": "protractortypescriptcucumber",
+  "version": "1.0.0",
+  "description": "framework for protractor",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor tmp/config.js",
+    "cucumbertest": "tsc && protractor tmp/cucumberConfig.js",
+    "tsc": "tsc",
+    "build-test": "npm run tsc && npm run test",
+    "protractor": "./node_modules/protractor/built/cli.js",
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update --proxy http://proxy.ops.tiaa-cref.org:8080/ --ignore_ssl"
+  },
+  "author": "soumyadip",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cucumber": "^4.0.4",
+    "@types/jasmine": "^3.3.5",
+    "@types/jasminewd2": "^2.0.6",
+    "@types/node": "^10.12.18",
+    "@types/selenium-webdriver": "^3.0.7",
+    "cucumber": "^5.1.0",
+    "jasmine": "^3.3.0",
+    "protractor": "^5.4.0",
+    "protractor-cucumber-framework": "^6.1.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.4",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cucumber-html-reporter": "^4.0.4"
+  },
+  "devDependencies": {}
+}
