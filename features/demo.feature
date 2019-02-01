@@ -9,7 +9,7 @@ When I add two numbers "<firstNumber>" and "<secondNumber>"
 Then the output displayed should be "<result>"
 Examples:
 | firstNumber   | secondNumber  | result |
-| 3             | 5             | 8      |
+| 3             | 5             | 9      |
 | 7             | 18            | 25     |
 
 
