@@ -1,7 +1,7 @@
 import { browser } from "protractor";
 import { Status } from "cucumber";
 
-var {After, Before} = require('cucumber');
+var { After, Before } = require('cucumber');
 
 Before(function () {
   // This hook will be executed before every scenario
@@ -20,12 +20,11 @@ Before(function () {
 
 
 After(async function (scenario) {
-    // This hook will be executed after every scenario
-    console.log("Testing is completed");
-    if(scenario.result.status==Status.FAILED)
-    {
-      //code to take screenshot
-      const screenshot = await browser.takeScreenshot();
-      this.attach(screenshot,"image/png");
-    }
-  });
+  // This hook will be executed after every scenario
+  console.log("Testing is completed");
+  if (scenario.result.status == Status.FAILED) {
+    //code to take screenshot
+    const screenshot = await browser.takeScreenshot();
+    this.attach(screenshot, "image/png");
+  }
+});
