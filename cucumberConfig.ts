@@ -1,5 +1,6 @@
 import { Config } from "protractor";
 import * as reporter from "cucumber-html-reporter";
+import { options } from "./utils/cucumberReportOptions";
 
 // An example configuration file
 export let config: Config = {
@@ -18,35 +19,19 @@ export let config: Config = {
         '../features/*.feature' // accepts a glob
     ],
 
-    onComplete: ()=>{
-            //copied from https://www.npmjs.com/package/cucumber-html-reporter
-            //to generate the html report
-            let options = {
-                theme: 'bootstrap',
-                jsonFile: './reports/cucumberreport.json',
-                output: './reports/cucumber_report.html',
-                reportSuiteAsScenarios: true,
-                launchReport: true,
-                metadata: {
-                    "App Version": "0.3.2",
-                    "Test Environment": "STAGING",
-                    "Browser": "Chrome 71.0.3578.98",
-                    "Platform": "Windows 7 Enterprise",
-                    "Parallel": "Scenarios",
-                    "Executed": "Local Machine"
-                }
-            };
- 
-            reporter.generate(options);
+    onComplete: () => {
+        //copied from https://www.npmjs.com/package/cucumber-html-reporter
+        //to generate the html report
+        reporter.generate(options);
     },
-    
+
     cucumberOpts: {
-        tags: ["~@ignore","@angularjstesting or @calculatortesting"],
+        tags: ["~@ignore", "@angularjstesting or @calculatortesting"],
 
         format: 'json:./reports/cucumberreport.json',  //this setting will create cucumber reports in JSON  format
         //we will then use html formatter to create html reports
         // require step definitions
-        
+
         require: [
             './stepDefinitions/*.js' // accepts a glob
         ]
