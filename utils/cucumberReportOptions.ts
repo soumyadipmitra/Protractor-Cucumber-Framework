@@ -5,10 +5,10 @@ export const options = {
     reportSuiteAsScenarios: true,
     launchReport: true,
     metadata: {
-        "App Version": "0.3.2",
+        "App Version": "1.0.1",
         "Test Environment": "STAGING",
-        "Browser": "Chrome 71.0.3578.98",
-        "Platform": "Windows 7 Enterprise",
+        "Browser": "Chrome 72.0.3626.109 (Official Build) (64-bit)",
+        "Platform": "Mac OS X Mojave",
         "Parallel": "Scenarios",
         "Executed": "Local Machine"
     }

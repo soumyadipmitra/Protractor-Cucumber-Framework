@@ -3,7 +3,7 @@ Feature: I am going to validate my website functionalities
    Demo feature file to see how Protractor works with Cucumber
 
    @calculatortesting
-   Scenario Outline: I will navigate to Super Calculator Site
+   Scenario Outline: Navigate to Super Calculator Site and perform calculations
       Given I will navigate to "SuperCalculator" site
       When I add two numbers "<firstNumber>" and "<secondNumber>"
       Then the output displayed should be "<result>"
@@ -11,7 +11,6 @@ Feature: I am going to validate my website functionalities
          | firstNumber | secondNumber | result |
          | 3           | 5            | 9      |
          | 7           | 18           | 25     |
-
 
    # Scenario: I will navigate to Super Calculator Site
    # Given I will navigate to "SuperCalculator" site

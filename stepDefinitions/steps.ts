@@ -1,42 +1,35 @@
-import { Given, When, Then } from "cucumber";
-import { Calculator } from "../pageObjects/calculator";
-import { browser } from "protractor";
-import { AngularJS } from "../pageObjects/angularjs";
-import chai from "chai";
+import { Given, When, Then } from 'cucumber';
+import { SuperCalculatorPage } from '../pageObjects/SuperCalculatorPage';
+import { browser } from 'protractor';
+import { AngularJSPage } from '../pageObjects/AngularJsPage';
+import chai from 'chai';
 
-let calc = new Calculator();
+let superCalcPage = new SuperCalculatorPage();
 
-let angularPage = new AngularJS();
+let angularPage = new AngularJSPage();
 
 var expect = chai.expect;
 
 Given('I will navigate to {string} site', async (sitename) => {
   // Write code here that turns the phrase above into concrete actions
   if (sitename == "SuperCalculator") {
-    await browser.get("https://juliemr.github.io/protractor-demo/");
+    await superCalcPage.openSuperCalcPage();
   }
 
   else if (sitename == "AngularJS") {
-    await browser.get('https://angularjs.org/');
+    await angularPage.openAngularJS();
   }
 
 });
 
-
-When('I add two numbers {string} and {string}', async (string, string2) => {
-  // Write code here that turns the phrase above into concrete actions
-  await calc.firstEditBox.sendKeys(string);
-  await calc.secondEditBox.sendKeys(string2);
-  await calc.goButton.click();
+When('I add two numbers {string} and {string}', async (first, second) => {
+  await superCalcPage.sendNumbers(first, second);
+  await superCalcPage.clickGoButton();
 });
 
 
 Then('the output displayed should be {string}', async (expectedResult) => {
-  // Write code here that turns the phrase above into concrete actions
-  await calc.singleResult.getText().then(function (actualResult) {
-    console.log(actualResult);
-    expect(expectedResult).to.equal(actualResult);
-  })
+  expect(expectedResult).to.equal(await superCalcPage.getSingleResult());
 });
 
 
@@ -47,22 +40,16 @@ Then('the output displayed should be {string}', async (expectedResult) => {
 
 
 When('I clicked on header link', async () => {
-  // Write code here that turns the phrase above into concrete actions
-  await angularPage.angularLink.click();
-
-
+  await angularPage.clickAngularLink();
 });
 
 
 When('you will navigate to angular page', async () => {
-  // Write code here that turns the phrase above into concrete actions
   await browser.sleep(3000);
 });
 
 
-Then('you will enter {string} in search box', async (string) => {
-  // Write code here that turns the phrase above into concrete actions
-  await angularPage.searchBox.sendKeys(string);
-
+Then('you will enter {string} in search box', async (text) => {
+  await angularPage.enterSearchText(text);
   await browser.sleep(3000);
 });

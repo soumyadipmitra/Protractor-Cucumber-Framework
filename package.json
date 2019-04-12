@@ -4,10 +4,10 @@
   "description": "framework for protractor",
   "main": "index.js",
   "scripts": {
-    "test": "protractor tmp/config.js",
-    "cucumbertest": "tsc && protractor tmp/cucumberConfig.js",
-    "tsc": "tsc",
-    "build-test": "npm run tsc && npm run test",
+    "test": "protractor tmp/config/jsConfig.js",
+    "cucumbertest": "protractor tmp/config/BDDConfig.js",
+    "kill-chromedriver": "START taskkill /f /im chromed",
+    "buildtest": "tsc && npm run cucumbertest",
     "protractor": "./node_modules/protractor/built/cli.js",
     "webdriver-update": "./node_modules/.bin/webdriver-manager update --ignore_ssl"
   },

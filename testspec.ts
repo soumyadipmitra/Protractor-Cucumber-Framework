@@ -1,11 +1,11 @@
 import {browser,element,by, By, $, $$, ExpectedConditions} from "protractor";
 import { async } from "q";
-import { Calculator } from "./pageObjects/calculator";
-import { AngularJS } from "./pageObjects/angularjs";
+import { SuperCalculatorPage } from "./pageObjects/SuperCalculatorPage";
+import { AngularJSPage } from "./pageObjects/AngularJsPage";
 
 describe("Protractor test", async ()=>{
     //create an object of Calculator page object class
-    let calc = new Calculator();
+    let calc = new SuperCalculatorPage();
 
     async function openBrowser()
     {
@@ -43,7 +43,7 @@ describe("Protractor test", async ()=>{
         await browser.get('https://angularjs.org/');
 
         //declare an object of angular page model
-        let angularPage = new AngularJS();
+        let angularPage = new AngularJSPage();
 
         //click on the angular.io link
         await angularPage.angularLink.click();
