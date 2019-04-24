@@ -1,4 +1,7 @@
 import { ElementFinder, element, by, browser } from "protractor";
+import { log4js } from '../utils/log4jsConfig';
+
+let logger = log4js.getLogger('SuperCalculator Page');
 
 export class SuperCalculatorPage
 {
@@ -19,21 +22,25 @@ export class SuperCalculatorPage
 
     async openSuperCalcPage(){
         await browser.get("https://juliemr.github.io/protractor-demo/");
+        logger.info('Opened Super Calculator page');
     }
 
     async sendNumbers(firstNum:string, secondNum:string){
         await this.firstEditBox.sendKeys(firstNum);
         await this.secondEditBox.sendKeys(secondNum);
+        logger.info('Sent ' + firstNum + ' and ' + secondNum + ' to page.');
     }
 
     async clickGoButton()
     {
         await this.goButton.click();
+        logger.info('Clicked Go Button');
     }
 
     async getSingleResult()
     {
         return await this.singleResult.getText().then((val)=>{
+            logger.info('Obtained Result : ' + val);
             return val;
         });
     }

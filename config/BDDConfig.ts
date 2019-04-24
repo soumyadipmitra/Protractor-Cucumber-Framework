@@ -38,7 +38,8 @@ export let config: Config = {
         //we will then use html formatter to create html reports
         // require step definitions
         require: [
-            '../stepDefinitions/*.js' // accepts a glob
+            '../stepDefinitions/*.js',
+            '../support/*.js' // accepts a glob
         ]
     },
 

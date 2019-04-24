@@ -29,5 +29,7 @@
     "chai-as-promised": "^7.1.1",
     "cucumber-html-reporter": "^4.0.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "log4js": "^4.1.0"
+  }
 }
