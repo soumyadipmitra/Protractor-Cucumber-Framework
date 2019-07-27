@@ -1,11 +1,12 @@
 import { ElementFinder, element, by, browser } from "protractor";
 import { log4js } from '../utils/log4jsConfig';
 
-let logger = log4js.getLogger('SuperCalculator Page');
+let logger = log4js.getLogger('SuperCalculatorPage');
 
 export class SuperCalculatorPage
 {
-    //declaring the page object variables
+    // the below variables has intentionally not been declared private so as to let the javascript test specs to run
+    // it is a good practice to declare the element finders as private
     firstEditBox:ElementFinder;
     secondEditBox:ElementFinder;
     goButton:ElementFinder;

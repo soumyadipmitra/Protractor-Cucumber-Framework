@@ -1,5 +1,5 @@
 import { Config } from 'protractor';
-import { Reporter } from '../utils/Reporter';
+import { ReportGenerator } from '../utils/ReportGenerator';
 import { Utilities } from '../utils/Utilities';
 import { browser } from 'protractor';
 
@@ -25,11 +25,11 @@ export let config: Config = {
 
     onPrepare: () => {
         browser.manage().window().maximize();
-        Reporter.createDirectory(jsonReportFolder);
+        ReportGenerator.createDirectory(jsonReportFolder);
     },
 
     onComplete: async () => {
-        await Reporter.createCucumberHtmlReport(timeStamp);
+        await ReportGenerator.createCucumberHtmlReport(timeStamp);
     },
 
     cucumberOpts: {

@@ -6,7 +6,7 @@ import * as fs from 'fs';
 const jsonReportFolder = path.join(process.cwd(), '/reports/json');
 const htmlReportFolder = path.join(process.cwd(), '/reports/html');
 
-export class Reporter {
+export class ReportGenerator {
 
     public static createDirectory(dir: string) {
         if (!fs.existsSync(dir)) {
@@ -18,7 +18,7 @@ export class Reporter {
         try {
             const inputJsonReport = path.join(jsonReportFolder, '/cucumber_' + timeStamp + '.json');
             const outputHtmlReport = path.join(htmlReportFolder, '/cucumber_' + timeStamp + '.html');
-            Reporter.createDirectory(htmlReportFolder);
+            ReportGenerator.createDirectory(htmlReportFolder);
             const cucumberReportOptions = {
                 theme: 'bootstrap', //options->['bootstrap', 'hierarchy', 'foundation', 'simple']
                 jsonFile: inputJsonReport,
