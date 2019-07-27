@@ -5,11 +5,11 @@ Basic Angular Automation Framework using BDD Model with Protractor and Cucumber
 1. Open Supercalculator (https://juliemr.github.io/protractor-demo/) and perform some mathematical operations and validate the result
 2. Open AngularJS page (https://angularjs.org/) and search for a string in the search box
 
-# Cucumber Feature Files (Gherkin) - features/demo.feature
+# Cucumber Feature Files (Gherkin) - /features/demo.feature
 
-# Step Definition Files - stepDefinitions/**.ts
+# Step Definition Files - /stepDefinitions/**.ts
 
-# Page Object Files - pageObjects/**.ts
+# Page Object Files - /pageObjects/**.ts
 
 # Clone the project
 git clone https://github.com/soumyadipmitra/Protractor-Cucumber-Framework.git
